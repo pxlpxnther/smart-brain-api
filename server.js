@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send(db.users);
+  res.send('it is working.');
 });
 app.post('/signin', signin.handleSignin(db, bcrypt));
 app.post('/register', (req, res) => {
@@ -37,7 +37,7 @@ app.post('/imageUrl', (req, res) => {
   image.handleApiCall(req, res);
 });
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`App is running on port ${process.env.port}`);
+  console.log(`App is running on port ${process.env.PORT}`);
 });
 
 /*
